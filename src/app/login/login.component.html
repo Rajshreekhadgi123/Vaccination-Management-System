@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 row1">
+    </div>
+    <div class="col-lg-6 row2">
+      <form action="/action_page.php">
+        <h5>USER LOGIN</h5>
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email"
+            name="email">
+        </div>
+        <div class="mb-3">
+          <label for="pwd" class="form-label">Password:</label>
+          <input type="password" [(ngModel)]="password" class="form-control" id="pwd" placeholder="Enter password"
+            name="pswd">
+        </div>
+
+        <button type="submit" [disabled]="email == ''|| password==''" routerLink="/vaccine"
+          class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

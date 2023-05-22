@@ -1,0 +1,63 @@
+
+
+
+.navbar{
+    margin: 0 50px;
+}
+.navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(44, 171, 221);
+}
+.navbar .nav-link{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px 10px;
+}
+
+
+.back{
+
+    background-image: url('assets/back2.jpg');
+    height: 500px;
+    background-size: cover;
+}
+
+.content {
+    
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.content p{
+    max-width: 400px;
+}
+.content h1{
+    max-width: 500px;
+    font-size: 52px;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 50px;
+    font-weight: 500;
+}
+.back button{
+    padding: 12px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.section h3{
+    text-align: center;
+    margin-top: 80px;
+    color: rgb(24, 179, 226);
+    margin-bottom: 100px;
+}
+.cards .card{
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.cards .card-body p{
+    text-align: center;
+
+}

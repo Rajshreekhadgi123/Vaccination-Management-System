@@ -1,0 +1,142 @@
+<div class="back">
+  <div class="content">
+    <h1>Protect Your Body and Family With Vaccine</h1>
+    <p>Fight this pendamic and get normal life again by getting a vaccine that suits your body's condition.</p>
+    <button type="button" routerLink="/home" class="btn ">Go Back</button>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row section">
+    <h2 [ngClass]="'one'">Vaccination Management System</h2>
+  </div>
+
+  <div class="row model-btn">
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary btn1" data-bs-toggle="modal" data-bs-target="#myModal">
+      Add Candidates
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+
+            <form action="/action_page.php">
+
+
+              <label for="fname">Enter Your name:</label><br><br>
+              <input class="inp" [(ngModel)]="candidatename" type="text" id="fname" name="fname"><br><br>
+
+              <div class="control">
+                <label for="">Do You Have any Disease ?</label>
+                <mat-radio-group [(ngModel)]="havedisease" [ngModelOptions]="{standalone: true}"
+                  aria-label="Select an option"><br>
+                  <mat-radio-button value="yes">Yes</mat-radio-button>
+                  <mat-radio-button value="no">No</mat-radio-button>
+                </mat-radio-group>
+              </div><br>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" *ngIf="disableadd" (click)="addcandidates();" class="btn btn-success"
+              data-bs-dismiss="modal">Add</button>
+
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row data">
+    <!-- 1st column -->
+    <div class="col-lg-4">
+      <h4>All Candidate</h4>
+      <table class="table">
+
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Candidate Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-light" *ngFor="let names of candidate ; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{names.candidatename}}</td>
+            <td><button type="button" (click)="dose1(i);" class="btn btn-primary">Dose-1 Done</button></td>
+            <td><i class="fa-solid fa-trash-can" (click)="deletecandidate(i)"></i></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- 2nd column -->
+    <div class="col-lg-4">
+      <h4>Dose-1 Candidate</h4>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Candidate Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-primary" *ngFor="let names of candidatedose1 ; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{names.candidatename}}</td>
+            <td><button type="button" (click)="dose2(i);" class="btn btn-primary">Dose-2 Done</button></td>
+            <td><button type="button" (click)="undodose1(i)" class="btn btn-warning">Undo</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- 3rd column -->
+
+    <div class="col-lg-4">
+      <h4>Dose-2 Candidate</h4>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Candidate Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-light" *ngFor="let names of candidatedose2 ; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{names.candidatename}}</td>
+            <td><button type="button" (click)="undodose2(i)" class="btn btn-warning">Undo</button></td>
+            <td><i class="fa-solid fa-user-check"></i></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
